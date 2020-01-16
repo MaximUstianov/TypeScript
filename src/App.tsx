@@ -1,26 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
+import {Navbar} from "./components/Navbar";
+import {CarForm} from "./components/CarForm";
+import {CarList} from "./components/CarList";
+import {ICar} from "./interfaces";
+
 
 const App: React.FC = () => {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    const [cars, setCars] = useState<ICar[]>([])
+
+    const addHandler = (title: string) => {
+        const newCar: ICar = {
+            title: title,
+            id: Date.now(),
+            completed: false
+        }
+        /* setCars([newCar, ...cars])*/
+        setCars(prev => [newCar, ...cars])
+    }
+    const removeHandler = (id: number) => {
+        setCars(prev => prev.filter(car => car.id !== id))
+    }
+    return (
+        <>
+            <Navbar/>
+            <div className="container">
+                <CarForm onAdd={addHandler}/>
+                <CarList
+                    cars={cars}
+                    onRemove={removeHandler}
+                />
+            </div>
+        </>
+    );
 }
 
 export default App;
