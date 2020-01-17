@@ -6,7 +6,7 @@ import {ICar} from "../interfaces";
 export const CarsPage: React.FC = () => {
     const [cars, setCars] = useState<ICar[]>([])
 
-    const addHandler = (title: string) => {
+    const addHandler = (title: any) => {
         const newCar: ICar = {
             title: title,
             id: Date.now(),
@@ -16,13 +16,13 @@ export const CarsPage: React.FC = () => {
         setCars(prev => [newCar, ...cars])
     }
 
-    /*  const onChangeName = (title: string, index: number) => {
-          const car = cars[index]
+     const onChangeName = (title: any, id: number) => {
+          const car = cars[id]
           car.title = title
           const changedCar = [...cars]
-          changedCar[index] = car
-          setCars(changedCar)
-      }*/
+          changedCar[id] = car
+         setCars(changedCar)
+      }
 
     const removeHandler = (id: number) => {
         setCars(prev => prev.filter(car => car.id !== id))
@@ -35,6 +35,8 @@ export const CarsPage: React.FC = () => {
     <CarList
         cars={cars}
         onRemove={removeHandler}
+        onChange={onChangeName}
+      /*  onChangeName={event => onChangeName(event.target.value, id)}*/
     />
 </React.Fragment>
     )

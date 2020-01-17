@@ -1,5 +1,5 @@
 export interface ICar {
-    title: string
+    title: any
     id: number,
     completed: boolean
 }

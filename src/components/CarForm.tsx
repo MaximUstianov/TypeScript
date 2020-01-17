@@ -1,12 +1,12 @@
 import React, {useState} from "react";
 
 interface CarFormProps {
-    onAdd(title: string): void
+    onAdd(title: any): void
 }
 
 export const CarForm: React.FC<CarFormProps> = props => {
 
-    const [title, setTitle] = useState<string>('')
+    const [title, setTitle] = useState<any>('')
 
 
 
