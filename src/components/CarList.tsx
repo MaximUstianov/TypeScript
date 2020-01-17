@@ -11,21 +11,19 @@ export const CarList: React.FC<CarListProps> = ({cars, onRemove}) => {
         return <p className="center">No cars...</p>
     }
     return (
-        <ul>
+        <div className="mainCar">
             {cars.map(car => {
-                const classes = ['todo']
+                const classes = ['car']
 
                 return (
-                    <li className={classes.join(' ')} key={car.id}>
-                        <label>
-                            <input type="checkbox"/>
-                            <span>{car.title}</span>
-                            <i className="material-icons red-text" onClick={() => onRemove(car.id)}>delete</i>
-                        </label>
-                    </li>
+                    <div className={classes.join(' ')} key={car.id}>
+                        <i className="material-icons red-text" onClick={() => onRemove(car.id)}>delete</i>
+                        <h2>{car.title}</h2>
+                        <input type="text" placeholder="change name"/>
+                    </div>
                 )
             })}
 
-        </ul>
+        </div>
     )
 }

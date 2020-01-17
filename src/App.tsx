@@ -1,37 +1,20 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {Navbar} from "./components/Navbar";
-import {CarForm} from "./components/CarForm";
-import {CarList} from "./components/CarList";
-import {ICar} from "./interfaces";
+import {AboutPage} from "./pages/AboutPage";
+import {BrowserRouter, Switch, Route} from 'react-router-dom'
+import {CarsPage} from "./pages/CarsPage";
 
 
 const App: React.FC = () => {
-
-    const [cars, setCars] = useState<ICar[]>([])
-
-    const addHandler = (title: string) => {
-        const newCar: ICar = {
-            title: title,
-            id: Date.now(),
-            completed: false
-        }
-        /* setCars([newCar, ...cars])*/
-        setCars(prev => [newCar, ...cars])
-    }
-    const removeHandler = (id: number) => {
-        setCars(prev => prev.filter(car => car.id !== id))
-    }
     return (
-        <>
+        <BrowserRouter>
             <Navbar/>
             <div className="container">
-                <CarForm onAdd={addHandler}/>
-                <CarList
-                    cars={cars}
-                    onRemove={removeHandler}
-                />
+                <Switch>
+                    <Route component={CarsPage} path="/" exact/>
+                    <Route component={AboutPage} path="/about"/></Switch>
             </div>
-        </>
+        </BrowserRouter>
     );
 }
 
