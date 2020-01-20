@@ -7,7 +7,7 @@ export const Navbar: React.FunctionComponent = () => (
             <a href="/" className="Cars data table">Cars data table</a>
             <ul className="right hide-on-med-and-down">
                 <li><NavLink to="/">Cars list</NavLink></li>
-                <li><NavLink to="/about">Info</NavLink></li>
+                <li><NavLink to="/about">Async request</NavLink></li>
             </ul>
         </div>
     </nav>

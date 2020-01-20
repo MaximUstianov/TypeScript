@@ -1,42 +1,59 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
-.px1{
-  padding-left: 1rem;
-  padding-right: 1rem;
+.px1 {
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
-.mt2{
-  margin-top: 2rem;
+.mt2 {
+    margin-top: 2rem;
 }
 
-.car{
-  margin-bottom: 1rem;
+.car {
+    border: 1px solid #ccc;
+    margin-bottom: 30px;
+    display: block;
+    padding: 10px;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .14);
+    border-radius: 5px;
 }
 
 .mainCar {
-  border: 1px solid #ccc;
-  margin-bottom: 10px;
-  display: block;
-  padding: 10px;
-  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .14);
-  border-radius: 5px;
 
 }
 
-.car i{
-  z-index: 2;
-  cursor: pointer;
-  margin-left: 80rem;
+.car i {
+    cursor: pointer;
+    z-index: 2;
+    padding-left: 95%;
+}
+
+input {
+    width: 200px !important;
+    margin-right: 3rem !important;
+}
+
+.About li {
+    list-style-type: none;
+    background: lightyellow;
+    height: 45px;
+    width: 220px;
+    border: 1px solid;
+}
+
+button {
+    height: 30px;
+    width: 100px;
 }
