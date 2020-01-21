@@ -5,8 +5,6 @@ import {ICar} from "../interfaces";
 
 export const CarsPage: React.FC = () => {
     const [cars, setCars] = useState<ICar[]>([])
-
-
     const addHandler = (title: any, year: any) => {
         const newCar: ICar = {
             title: title,
@@ -16,7 +14,6 @@ export const CarsPage: React.FC = () => {
         /* setCars([newCar, ...cars])*/
         setCars(prev => [newCar, ...cars])
     }
-
 
     const removeHandler = (id: number) => {
         setCars(prev => prev.filter(car => car.id !== id))
