@@ -27,7 +27,7 @@ export const CarForm: React.FC<CarFormProps> = props => {
             setTitle('')
             setYear('')
         } else {
-            alert("wrong data")
+            alert("wrong input")
         }
     }
 
@@ -45,7 +45,7 @@ export const CarForm: React.FC<CarFormProps> = props => {
                 value={year}
                 type="text"
                 id="year"
-                placeholder="Enter year"
+                placeholder="1990 < YEAR < 2021"
             />
             <button type="submit" onClick={keyHandler}>Add car</button>
             <label htmlFor="title" className="active">Enter data</label>

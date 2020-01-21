@@ -18,13 +18,6 @@ export const CarsPage: React.FC = () => {
     }
 
 
-    const onChangeName = (title: any) => {
-        const car = { ...cars[title], title };
-        console.log(car)
-        const cars2 = [...cars]
-        console.log(cars2)
-    }
-
     const removeHandler = (id: number) => {
         setCars(prev => prev.filter(car => car.id !== id))
     }
@@ -37,8 +30,6 @@ export const CarsPage: React.FC = () => {
             <CarList
                 cars={cars}
                 onRemove={removeHandler}
-                onChange={onChangeName}
-                /*  onChangeName={event => onChangeName(event.target.value, id)}*/
             />
         </React.Fragment>
     )
